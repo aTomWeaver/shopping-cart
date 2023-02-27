@@ -1,3 +1,26 @@
 header {
   display: flex;
+  justify-content: space-between;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.left {
+  font-weight: bold;
+}
+
+.right {
+  display: flex;
+}
+
+.right > * {
+  padding: 30px;
+  font-weight: bold;
+}
+
+.shop-link {
+  font-weight: bold;
 }

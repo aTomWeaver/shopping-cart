@@ -1,11 +1,12 @@
-import './styles/App.css'
+import RouteSwitch from "./RouteSwitch";
+import Nav from "./components/Nav";
 
 function App() {
   return (
-    <div>
-      <h1>Welcome to the Milton's Milton Factory!</h1>
-      <p>We sell Miltons!</p>
-    </div>
+    <>
+      <Nav />
+      <RouteSwitch />
+    </>
   );
 }
 
