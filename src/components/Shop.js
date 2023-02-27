@@ -5,7 +5,7 @@ const products = require("../data/products.json");
 
 function Shop() {
   return (
-    <>
+    <div className="product-ctr">
       {/* map all of the products */}
       {products.list.map((product) => (
         <Product
@@ -14,7 +14,7 @@ function Shop() {
           key={product.color}
         />
       ))}
-    </>
+    </div>
   );
 }
 
