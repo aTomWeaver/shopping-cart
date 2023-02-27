@@ -1,0 +1,34 @@
+{
+  "list": [
+    {
+      "name": "orange",
+      "color": "#c88f07",
+      "price": 21
+    },
+    {
+      "name": "murky ice",
+      "color": "#a2c4c0",
+      "price": 24
+    },
+    {
+      "name": "tacoma",
+      "color": "#257c4a",
+      "price": 23
+    },
+    {
+      "name": "gray",
+      "color": "#868984",
+      "price": 26
+    },
+    {
+      "name": "teal",
+      "color": "#09b481",
+      "price": 24
+    },
+    {
+      "name": "dulled copper",
+      "color": "#737b2d",
+      "price": 22
+    }
+  ]
+}

@@ -1,11 +1,11 @@
 import React from "react";
-// import "../styles/Nav.css";
+import "../styles/Nav.css";
 
 function Nav() {
   return (
     <header>
       <div className="left">
-        <a href="./#">
+        <a href="/">
           <h1>SHÖP</h1>
         </a>
       </div>
