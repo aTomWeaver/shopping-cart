@@ -8,11 +8,12 @@ function Shop() {
     <>
       {/* map all of the products */}
       {products.list.map((product) => (
-        <Product name={product.name} key={product.color} />
+        <Product
+          name={product.name}
+          color={product.color}
+          key={product.color}
+        />
       ))}
-      <Product name="Bungus" />
-      <Product name="Chungle" />
-      <Product name="Frumbutt" />
     </>
   );
 }

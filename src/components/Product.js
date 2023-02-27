@@ -1,9 +1,10 @@
 import React from "react"
+import '../styles/Product.css'
 
-function Product({name, id}) {
+function Product({name, color}) {
   return (
-    <div className="product" id={id}>
-      This is a {name} product
+    <div className="product" style={{background: color}}>
+      This is a {name} product.
     </div>
   )
 }
