@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/Nav.css";
 
-function Nav() {
+function Nav({cartQty, toggle}) {
   return (
     <header>
       <div className="left">
@@ -13,7 +13,7 @@ function Nav() {
         <a href="/shop" className="shop-link">
           Shop
         </a>
-        <div className="cart-icon">Cart</div>
+        <button className="cart-icon" onClick={toggle}>Cart</button>
       </div>
     </header>
   );
