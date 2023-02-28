@@ -10,6 +10,7 @@ function Shop() {
       {products.list.map((product) => (
         <Product
           name={product.name}
+          price={product.price}
           color={product.color}
           key={product.color}
         />

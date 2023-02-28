@@ -5,7 +5,6 @@ import Nav from "./components/Nav";
 import Shop from "./components/Shop";
 import Cart from "./components/Cart";
 import { useState } from "react";
-import { queryByTestId } from "@testing-library/react";
 
 function App() {
   const [cart, setCart] = useState([
