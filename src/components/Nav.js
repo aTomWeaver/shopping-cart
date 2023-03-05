@@ -7,7 +7,7 @@ function Nav({ cartQty, toggle }) {
     <header>
       {/* LEFT */}
       <div className="left">
-        <Link to="/">
+        <Link to="/" className="logo-link">
           <h1>Milton's Milton Factory</h1>
         </Link>
       </div>
@@ -16,18 +16,13 @@ function Nav({ cartQty, toggle }) {
       <div className="right">
         {/* SHOP LINK */}
         <Link to="/shop" className="shop-link">
-          Shop
+          <h2>Shop</h2>
         </Link>
         {/* CART */}
-        <div className="cart-btn-ctr">
-          <button
-            className="cart-icon"
-            onClick={toggle}
-            style={{ height: "20px" }}
-          >
-            <h2>Cart</h2>
-          </button>
-        </div>
+        <button className="cart-icon" onClick={toggle}>
+          <h2>Cart</h2>
+          <p>:  {cartQty}</p>
+        </button>
       </div>
     </header>
   );

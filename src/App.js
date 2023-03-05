@@ -7,8 +7,13 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [cart, setCart] = useState([]);
+  const [cartQty, setCartQty] = useState(0);
 
-  useEffect(() => {});
+  useEffect(() => {
+    let cartVals = cart.map(item => item.qty)
+    let qty = cartVals.reduce((prev, curr) => prev + curr, 0);
+    setCartQty(qty)
+  }, [cart])
 
   const toggleCartView = (e) => {
     e.preventDefault();
@@ -31,7 +36,10 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Nav cartQty={cart.length} toggle={toggleCartView} />
+      <Nav
+        cartQty={cartQty}
+        toggle={toggleCartView}
+      />
       <Cart list={cart} />
       <Routes>
         <Route path="/" element={<Home />} />

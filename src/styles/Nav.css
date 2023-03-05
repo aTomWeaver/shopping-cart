@@ -1,9 +1,27 @@
 header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
-a {
+h2 {
+  margin: none;
+  padding: none;
+  font-size: 1em;
+}
+
+header button {
+  height: 80px;
+  display: flex;
+  font-size: 20px;
+  align-items: center;
+  padding: 0px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+.logo-link {
   text-decoration: none;
   color: black;
 }
@@ -14,13 +32,21 @@ a {
 
 .right {
   display: flex;
+  align-items: center;
 }
 
 .right > * {
-  padding: 30px;
+  padding-right: 30px;
   font-weight: bold;
+  font-size: 20px;
+  font-family: Noto Sans, Helvetica, sans-serif;
 }
 
 .shop-link {
+  display: flex;
+  align-items: center;
   font-weight: bold;
+  text-decoration: none;
+  color: black;
+  height: 80px;
 }
