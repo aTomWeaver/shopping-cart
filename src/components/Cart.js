@@ -12,14 +12,19 @@ function Cart({ list }) {
 
   return (
     <div className="cart-modal cart-invis">
+      <h3>Shopping Cart</h3>
       {list.map((item) => (
-        <div key={item.name}>
-          <span>{item.name} </span>
-          <span>{item.qty} </span>
+        <div key={item.name} className="cart-item">
+          <span>
+            <span>{item.qty} </span>
+            <span>{item.name} </span>
+          </span>
+
           <span>{item.price * item.qty}</span>
         </div>
       ))}
-      <div>
+      <div className="cart-total">
+        <span></span>
         <span>Total: {getTotal()}</span>
       </div>
     </div>
