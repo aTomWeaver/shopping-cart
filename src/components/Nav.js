@@ -1,19 +1,33 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/Nav.css";
 
-function Nav({cartQty, toggle}) {
+function Nav({ cartQty, toggle }) {
   return (
     <header>
+      {/* LEFT */}
       <div className="left">
-        <a href="/">
+        <Link to="/">
           <h1>Milton's Milton Factory</h1>
-        </a>
+        </Link>
       </div>
+
+      {/* RIGHT */}
       <div className="right">
-        <a href="/shop" className="shop-link">
+        {/* SHOP LINK */}
+        <Link to="/shop" className="shop-link">
           Shop
-        </a>
-        <button className="cart-icon" onClick={toggle}>Cart</button>
+        </Link>
+        {/* CART */}
+        <div className="cart-btn-ctr">
+          <button
+            className="cart-icon"
+            onClick={toggle}
+            style={{ height: "20px" }}
+          >
+            <h2>Cart</h2>
+          </button>
+        </div>
       </div>
     </header>
   );

@@ -6,16 +6,12 @@ import Cart from "./components/Cart";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [cart, setCart] = useState([
-    { name: "onion", qty: 2, price: 32 },
-    { name: "carrot", qty: 3, price: 5 },
-  ]);
+  const [cart, setCart] = useState([]);
 
-  useEffect(() => {
+  useEffect(() => {});
 
-  })
-
-  const toggleCartView = () => {
+  const toggleCartView = (e) => {
+    e.preventDefault();
     const cartEl = document.querySelector(".cart-modal");
     cartEl.style.display === "none"
       ? (cartEl.style.display = "block")
@@ -24,26 +20,24 @@ function App() {
 
   const handleCartAdd = (item, qty, price) => {
     const currCart = [...cart];
-    if (currCart.some(el => el.name === item)) {
-      const currItem = currCart.filter(el => el.name === item)[0]
+    if (currCart.some((el) => el.name === item)) {
+      const currItem = currCart.filter((el) => el.name === item)[0];
       currItem.qty += qty;
     } else {
-      currCart.push({name: item, qty, price});
+      currCart.push({ name: item, qty, price });
     }
     setCart(currCart);
   };
 
   return (
-    <>
+    <BrowserRouter>
       <Nav cartQty={cart.length} toggle={toggleCartView} />
       <Cart list={cart} />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/shop" element={<Shop handleCartAdd={handleCartAdd} />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/shop" element={<Shop handleCartAdd={handleCartAdd} />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
