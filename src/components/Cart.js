@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/Cart.css";
 
 function Cart({ list }) {
   const getTotal = () => {
@@ -10,7 +11,7 @@ function Cart({ list }) {
   };
 
   return (
-    <div className="cart-modal" style={{display: "none"}}>
+    <div className="cart-modal cart-invis">
       {list.map((item) => (
         <div key={item.name}>
           <span>{item.name} </span>

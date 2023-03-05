@@ -10,17 +10,19 @@ function App() {
   const [cartQty, setCartQty] = useState(0);
 
   useEffect(() => {
-    let cartVals = cart.map(item => item.qty)
+    let cartVals = cart.map((item) => item.qty);
     let qty = cartVals.reduce((prev, curr) => prev + curr, 0);
-    setCartQty(qty)
-  }, [cart])
+    setCartQty(qty);
+  }, [cart]);
 
-  const toggleCartView = (e) => {
-    e.preventDefault();
+  const toggleCartView = () => {
     const cartEl = document.querySelector(".cart-modal");
-    cartEl.style.display === "none"
-      ? (cartEl.style.display = "block")
-      : (cartEl.style.display = "none");
+    const classList = [...cartEl.classList];
+    if (classList.some((val) => val === "cart-invis")) {
+      cartEl.classList.remove("cart-invis");
+    } else {
+      cartEl.classList.add("cart-invis");
+    }
   };
 
   const handleCartAdd = (item, qty, price) => {
@@ -36,10 +38,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Nav
-        cartQty={cartQty}
-        toggle={toggleCartView}
-      />
+      <Nav cartQty={cartQty} toggle={toggleCartView} />
       <Cart list={cart} />
       <Routes>
         <Route path="/" element={<Home />} />
