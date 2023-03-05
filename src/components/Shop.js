@@ -3,7 +3,7 @@ import Product from "./Product";
 import "../styles/Shop.css";
 const products = require("../data/products.json");
 
-function Shop() {
+function Shop({handleCartAdd}) {
   return (
     <div className="product-ctr">
       {/* map all of the products */}
@@ -13,6 +13,7 @@ function Shop() {
           price={product.price}
           color={product.color}
           key={product.color}
+          addToCart={handleCartAdd}
         />
       ))}
     </div>
