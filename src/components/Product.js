@@ -11,30 +11,33 @@ function Product({ name, price, color, addToCart }) {
 
   const resetQty = () => {
     let input = document.getElementById(`${name}-input`);
-    input.value = 1
+    input.value = 1;
     setQty(1);
   };
 
   return (
     <div className="product" style={{ background: color, width: "150px" }}>
       <h2>{name} milton</h2>
-      <p>{price}</p>
-      <input
-        id={`${name}-input`}
-        style={{ width: 50 }}
-        type="number"
-        min="1"
-        defaultValue="1"
-        onChange={handleQtyChange}
-      ></input>
-      <button
-        onClick={() => {
-          addToCart(name, qty, price);
-          resetQty();
-        }}
-      >
-        Add To Cart
-      </button>
+      <div className="product-price">${price}</div>
+      <span>
+        <input
+          className="product-qty"
+          id={`${name}-input`}
+          style={{ width: 50 }}
+          type="number"
+          min="1"
+          defaultValue="1"
+          onChange={handleQtyChange}
+        ></input>
+        <button
+          onClick={() => {
+            addToCart(name, qty, price);
+            resetQty();
+          }}
+        >
+          Add To Cart
+        </button>
+      </span>
     </div>
   );
 }
